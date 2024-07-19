@@ -1,1 +1,29 @@
 <p>{{ title }}</p>
+
+<ul>
+  <li *ngFor="let item of items">{{item}}</li>
+</ul>
+
+<form action="POST" (ngSubmit)="onSubmit($event)">
+
+  <input [(ngModel)]="newNumber" name="anynumber" type="text">
+  <button type="submit">Enviar</button>
+  <p>{{ newNumber }}</p>
+</form>
+
+
+
+<div [ngSwitch]="name">
+  <div *ngSwitchCase="'alex'">
+    Hi, Alex!!
+  </div>
+
+  <div *ngSwitchCase="'nascimento'">
+    Hi, Nascimento!!
+  </div>
+
+
+  <button (click)="onClickSwitch()">Switch</button>
+</div>
+<br>
+<br>

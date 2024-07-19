@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   template: `
 
   <app-title *ngIf="destroy"/>
+
   <button (click)="destroyComponent()">Destroy</button>
   <router-outlet />
   `,
@@ -19,6 +20,6 @@ export class AppComponent {
   destroy = true;
 
   destroyComponent(): void {
-    this.destroy = false;
+    setInterval(() => this.destroy = !this.destroy, 5000);
   }
 }
